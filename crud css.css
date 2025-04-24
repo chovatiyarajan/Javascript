@@ -1,0 +1,56 @@
+/* General Button Styling */
+button {
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Primary Save/Update Button */
+#Save_Data {
+    background: #28a745;
+    color: white;
+}
+
+#Save_Data:hover {
+    background: #218838;
+}
+
+/* Click Animation */
+button:active {
+    transform: scale(0.9); /* Shrink on click */
+    animation: bounce 0.3s ease-in-out;
+}
+
+/* Bounce Effect */
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* Ripple Effect */
+button::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.4);
+    display: block;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.5s ease-out;
+    opacity: 0;
+}
+
+/* Show ripple effect when clicking */
+button:active::after {
+    transform: scale(2);
+    opacity: 1;
+    transition: transform 0.5s ease-out, opacity 0.8s ease-out;
+}

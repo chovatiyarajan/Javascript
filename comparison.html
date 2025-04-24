@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="check"></p>
+
+    <script>
+        let a
+         = 12;
+        let b = ' missing';
+
+        let c = a ?? b;
+
+        document.getElementById('check').innerHTML = 'value is '+ c;
+
+        const name = null;
+
+        
+        const car = {type:"Fiat", model:"500", color:"white"};
+
+        car?.weight
+    </script>
+</body>
+</html>

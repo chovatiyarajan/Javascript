@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            text-align: center;
+        }
+
+        tr {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px 0px;
+        }
+
+        td {
+            width: 12.5%;
+
+        }
+
+        th {
+            padding: 10px ;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <table border="5">
+        <tr>
+            <th colspan="8">Strings Methods</th>
+        </tr>
+        <tr>
+            <td>
+                <p id="str"></p>
+            </td>
+            <td>
+                <P id="at"></P>
+            </td>
+            <td>
+                <p id="str1"></p>
+            </td>
+            <td>
+                <p id="substr"></p>
+            </td>
+            <td>
+                <button onclick="uppercase()">UPPERCASE</button> <button onclick="lowercase()">lowercase</button>
+                <p id="ucase"></p>
+            </td>
+            <td>
+                <button onclick="connect()">connet bellow two strings</button>
+                <p id="connect_demo1"></p>
+                <p id="connect_demo2"></p>
+                <p id="connect"></p>
+            </td>
+            <td>
+                <p>trim bellow</p>
+                <p id="trim"></p>
+            </td>
+            <td>
+                <button onclick="repett()">Chang Name</button>
+                <p id="repet">My Name is Rajan</p>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="8">STRING SEARCH</th>
+        </tr>
+        <tr>
+            <td>
+                <p>index of 'this is an apple this apple is red'</p>
+                <p id="index1"></p>
+            </td>
+            <td>
+                <p>last index of 'this is an apple this apple is red'</p>
+                <p id="lastindex1"></p>
+            </td>
+            <td>
+                <p>include 'this is an apple'</p>
+                <p id="include1"></p>
+            </td>
+            <td>
+                <p>include 'this is an banana'</p>
+                <p id="include2"></p>
+            </td>
+            <td>
+                <p>start method ' this is an apple this apple is red'</p>
+                <p id="start1"></p>
+            </td>
+            <td>
+                <p>start method ' this is an apple this apple is red'</p>
+                <p id="start2"></p>
+            </td>
+            <td>
+                <p>start method ' this is an apple this apple is red'</p>
+                <p id="end1"></p>
+            </td>
+            <td>
+                <p>start method ' this is an apple this apple is red'</p>
+                <p id="end2"></p>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="8">Strings Templates</th>
+        </tr>
+        <tr style="justify-content: center;">
+            <td>
+                <p> name = Rajan <br> surname = Chovatiya </p>
+                <p id="stringtem1"></p>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="8">Number</th>
+        </tr>
+        <tr>
+            <td>
+                <p> 100 / NaN</p>
+                <p id="Number1"></p>
+            </td>
+            <td>
+                <p> 100 + Infinity</p>
+                <p id="Number2"></p>
+            </td>
+            <td>
+                <p> 2 / 0</p>
+                <p id="Number3"></p>
+            </td>
+            <td>
+                <p>type of Infinity</p>
+                <p id="Number4"></p>
+            </td>
+            <td>
+                <p>object using numbers</p>
+                <p id="numbero1"></p>
+            </td>
+            <td>
+                <p>equal using ==</p>
+                <p id="numobero2"></p>
+                <p id="numobero3"></p>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+<script src="String.js"></script>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock {
+            border: 3px solid black;
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .second {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .minute {
+
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+
+        }
+
+        .hour {
+            /* border: 1px solid black; */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .demo {
+            /* border: 1px solid black; */
+            height: 50%;
+            transition: 1s !important;
+            margin-top: 10px;
+
+        }
+
+        span {
+            width: 6px;
+            border-radius: 50%;
+            height: 6px;
+            z-index: 9;
+            background-color: black;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <span></span>
+        <div id="secondId" class="second">
+            <div class="demo"
+                style="border:1px solid red;border-top-right-radius: 20px;border-top-left-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;">
+            </div>
+        </div>
+        <div id="minuteId" class="minute">
+            <div class="demo"
+                style="border:3px solid green;border-top-right-radius: 20px;border-top-left-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;">
+            </div>
+        </div>
+        <div id="hourId" class="hour">
+            <div class="demo"
+                style="border:4px solid yellow;border-top-right-radius: 20px;border-top-left-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;">
+            </div>
+        </div>
+    </div>
+    <div>
+        <h1 id="demo" ></h1>
+    </div>
+</body>
+
+<script>
+    function digital_clock() {
+        let d = new Date();
+        document.getElementById('demo').innerHTML = d.getHours() + ' : ' + d.getMinutes() + ' : ' + d.getSeconds() + ":" + d.getMilliseconds();
+
+        let second = d.getSeconds() * 6;
+
+
+        let minute = d.getMinutes() * 6 + (d.getSeconds() * 0.1);
+
+        let hour = d.getHours() * 30 + (d.getMinutes() * 0.1);
+
+        document.getElementById('secondId').style = `transform: rotate(${second}deg);`
+        document.getElementById('minuteId').style = `transform: rotate(${minute}deg);`
+        document.getElementById('hourId').style = `transform: rotate(${hour}deg);`
+
+    }
+    setInterval(digital_clock, 0.001);
+</script>
+
+</html>

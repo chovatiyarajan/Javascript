@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hello {
+            width: 300px;
+        }
+
+        #hide {
+            width: 300px;
+            /* opacity: ; */
+        }
+
+    </style>
+    <script>
+        function S() {
+            var ele = document.getElementById('hello')
+            ele.innerHTML = 'This is My First JavaScript Program';
+            ele.style.transition = 'width 2s, 3s ';
+            ele.style.background = 'green';
+            ele.style.width = '200px';
+            ele.style.padding = '20px';
+            ele.style.color = 'white';
+        }
+
+        function font() {
+            var size = document.getElementById('font_size')
+            size.style.fontSize = '50px';
+        }
+        function font2() {
+            var size = document.getElementById('font_size')
+            size.style.fontSize = '16px';
+        }
+
+        function hide() {
+            var hiden = document.getElementById('hide')
+            hiden.style.display = 'none';
+            hiden.style.transition = 'width 2s, 3s';
+            hiden.style.background = 'grey';
+            hiden.style.width = '200px';
+            hiden.style.padding = '20px'
+        }
+        function hide1() {
+            var hiden = document.getElementById('hide')
+            hiden.style.display = 'block';
+            hiden.style.transition = 'width 2s, 3s';
+            hiden.style.background = 'grey';
+            hiden.style.width = '200px';
+            hiden.style.padding = '20px'
+        }
+        function sum() {
+            document.write(5+5)
+        }
+
+        function alert1() {
+            window.alert(10*545);
+        }
+        function con() {
+            transition
+            console.log(20)
+        }
+        function im(){
+            document.getElementById('on')
+            var imn = document.getElementById('on')
+            imn.src='https://www.w3schools.com/js/pic_bulbon.gif'
+            imn.style.filter='drop-shadow( 0px 0px 40px yellow)'
+            imn.style.transition='0.5s'
+        }
+        function imgn( ){
+            document.getElementById('on').src='https://www.w3schools.com/js/pic_bulboff.gif'
+            var imn = document.getElementById('on')
+            imn.style.filter='drop-shadow( 0px 0px 0px)'
+            imn.style.transition='0.2s'
+        }
+
+    </script>
+</head>
+
+<body>
+    <p id="hello">Hello!</p>
+    <button onclick="S()">Hi</button><br>
+
+
+    <button  onclick="im()">on</button>
+    <img src="https://www.w3schools.com/js/pic_bulboff.gif" alt="" id="on" width="">
+    <button onclick="imgn()">off</button>
+    <br>    
+
+
+    <button onclick="font()" style="margin-top: 20px;">incress Font</button>
+    <p id="font_size" style="margin-top: 20px;">you can incress fonts size to click incress Font button</p>
+    <button onclick="font2()" style="margin-top: 20px;">Decress Font</button><br>
+
+    <button onclick="hide()">hide content</button>
+    <p id="hide"> if you have to hide this content click hide content button</p>
+    <button onclick="hide1()">getback content</button><br>
+
+    <button onclick="document.getElementById('date').innerHTML=Date()" style="margin-top: 20px;">give ne today's
+        date</button>
+    <p id="date"></p>
+
+    <button  onclick="sum()">sum</button>
+    <button onclick="document.write(10*10)">mul</button><br>
+
+    <button onclick="alert1()">alert</button>
+
+    <button onclick="con()">chek consol</button>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="getNumber">
+    <button onclick="submitValue()">getValue</button>
+    <p id="getMessage"></p>
+
+    <p id="getRespond"></p>
+
+    <input type="text" id="exmp" oninput="getValue()">
+</body>
+<script>
+
+    function submitValue() {
+        let inpurBlock = document.getElementById("getNumber");
+        let Message = document.getElementById("getMessage");
+        let respond = document.getElementById("getRespond");
+
+        try {
+            if (inpurBlock.value == "") {
+                throw 'it is empty';
+            }
+            else if (inpurBlock.value < 5) {
+                throw 'value is too low!';
+            }
+            else if (inpurBlock.value == NaN) {
+                throw 'plese enter number value!!';
+            }
+            else if (inpurBlock.value > 10) {
+                throw 'value is too high!';
+            }
+            else {
+                throw 'value is perfact!!';
+            }
+        }
+        catch (err) {
+            Message.innerHTML = err
+        }
+        finally {
+            console.log("thank you for your respond!!");
+        }
+        // console.log(inpurBlock.value)
+    }
+    a = "hello"
+    function onVar() {
+        a = 'hii';
+    }
+    // console.log(this.a);
+
+    function getValue() {
+        getVal = document.getElementById('exmp');
+        console.log(getVal.value);
+
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="crud css.css">
+<style>
+    body {
+        /* background-color: rgb(255, 208, 127); */
+        /* background-image: url("../practice_block/image/background_image.jpg"); */
+        background: linear-gradient(90deg, #1c2166, #690a0a);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+
+    .getDataTabel {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+        margin-bottom: 40px;
+    }
+
+    .table {
+        padding: 15px;
+        border-radius: 20px;
+        width: 40%;
+        border: 1px solid black;
+        height: 300px;
+        background-image: linear-gradient(80deg , blue, yellow);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .tr {
+        width: 100%;
+    }
+
+    .tdLabel {
+        width: 40%;
+        text-align: center;
+        color: rgb(195, 195, 195);
+        color: rgba(0, 0, 0, 0.693);
+    }
+
+    .td>input {
+        width: 99%;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 5px 0;
+        text-align: center;
+        opacity: 0.5;
+        color: rgba(0, 0, 0, 0.885);        
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .red {
+        color: red;
+    }
+
+    .saveBtn {
+        padding: 10px 70px;
+        color: chocolate;
+        background-color: antiquewhite;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 10px;
+    }
+
+    .tableDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+    }
+
+    .dTabel {
+        border: 1px solid black;
+        width: 60%;
+        padding: 10px 0;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .nm {
+        /* color: red; */
+        text-align: center;
+        /* border: 1px solid black ; */
+        background-color: rgba(0, 255, 221, 0.571);
+    }
+
+    .dataTD {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px 0px;
+    }
+
+    .tableBtn {
+        padding: 5px 10px;
+        background-color: rgba(0, 0, 0, 0.289);
+        border: 1px solid transparent;
+        border-radius: 5px;
+    }
+    .mulDel{
+        padding: 10px 30px;
+        border: 0px solid black;
+        margin-top: 30px;
+        border-radius: 10px;
+        background-image: linear-gradient(45deg , rgb(56, 56, 223),#d8d80e);
+    }
+
+    @media screen and (max-width: 815px) {
+        .table {
+            width: 70%;
+        }
+    }
+
+    @media screen and (max-width: 440px) {
+        .table {
+            width: 90%;
+        }
+    }
+    
+</style>
+
+<body style="margin: 0;">
+    <div class="getDataTabel">
+        <table class="table">
+            <tr class="tr">
+                <td class="tdLabel"><label>Name</label></td>
+                <td class="td"><input type="text" id="name" required><br><label id="gName"
+                        class="red"></label></td>
+            </tr>
+            <tr class="tr">
+                <td class="tdLabel"><label>Email</label></td>
+                <td class="td"><input type="email" id="email" required><br><label id="gEmail" class="red"></label></td>
+            </tr>
+            <tr class="tr">
+                <td class="tdLabel"><label>Password</label></td>
+                <td class="td"><input type="text" id="passWord" required><br><label id="gPass" class="red"></label></td>
+            </tr>
+            <tr class="tr">
+                <td class="tdLabel"><label>Gender</label></td>
+                <td class="td">
+                    <div class="center">
+                        <input type="radio" id="male" name="gender" value="male" required><label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="feMale"><label for="female">FeMale</label> 
+                    </div>
+                    <div><label id="gGen" class="red"></label></div>
+                </td>
+            </tr>
+            <tr class="tr"> 
+                <td class="tdLabel"><label>Hobby</label></td>
+                <td class="td" style="text-align: center;">
+                    <div class="center">
+                        <input type="checkbox" id="h1" name="Hobby" value="Cricket">Cricke
+                        <input type="checkbox" id="h2" name="Hobby" value="Table-Tenish">Table-tenish
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="center">
+        <button class="saveBtn" id="Save_Data" onclick="save()">Save</button>
+    </div>
+    <div class="tableDiv">
+        <div>            
+            <input type="text"
+                style="margin-bottom: 10px; padding: 10px 30px; border-radius: 8px;border: 1px solid black;text-align: center;"
+                placeholder="Serch" id="search">
+
+            <button onclick="searchData()"
+                style=" padding: 10px 20px; border-radius: 8px;border: 1px solid black;text-align: center;">Search</button>
+        </div>
+        <table class="dTabel" style="background-color: rgba(250, 235, 215, 0.548);">
+            <thead>
+                <tr class="dataTR">
+                    <th><input type="checkbox" id="checkAll" onchange="selectAll()" value="checkAll"></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Gender</th>
+                    <th>Hobby</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody id="saveDataonTable" class="tBody"></tbody>
+        </table>
+        <button class="mulDel" onclick="mulDel()">Delete</button>
+    </div>
+</body>
+<script src="JS CroudCSS.js"></script>
+
+</html>

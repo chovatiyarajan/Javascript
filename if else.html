@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input onchange="getNum()" type="number" id="btn" placeholder="enter your age" >
+    <p id="hii"></p>
+
+    <script>
+        function getNum() {
+            a = document.getElementById('btn').value;
+            console.log(a)
+            if (a > 18) {
+                document.getElementById('hii').innerHTML = "you are more than 18!!"
+            }
+            else if( a == 18){
+                document.getElementById('hii').innerHTML = "you are 18 year old!!"
+            }
+            else{
+                document.getElementById('hii').innerHTML = "you are under 18!!"
+            }
+        }
+    </script>
+</body>
+
+</html>

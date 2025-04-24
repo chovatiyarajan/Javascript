@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0px;
+            border-bottom: 2px solid grey;
+        }
+
+        th {
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>NUMBER METHODS</th>
+        </tr>
+        <tr>
+            <td>
+                <p>Convert to string</p>
+                <p id="tostring"></p>
+            </td>
+            <td>
+                <p>Convert to exponential</p>
+                <p id="toexponential"></p>
+            </td>
+            <td>
+                <p>to get fixed decimal digits</p>
+                <p id="tofixed"></p>
+            </td>
+            <td>
+                <p>to get specified length</p>
+                <p id="toprecision"></p>
+            </td>
+            <td>
+                <p>to Return Number as Number</p>
+                <p id="valueof"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>Convert Variables to Numbers</th>
+        </tr>
+        <tr>
+            <td>
+                <p>number()</p>
+                <p id="number"></p>
+            </td>
+            <td>
+                <p>Convert Date to Nmuber</p>
+                <p id="datetonum"></p>
+            </td>
+            <td>
+                <p>Converts into number as integer form</p>
+                <p id="parseint"></p>
+            </td>
+            <td>
+                <p>Converts into number as integer<br> and float both form</p>
+                <p id="parsefloat"></p>
+            </td>
+            <th><br><br><br>Number<br>Object<br>Methods<br>--></th>
+            <td>
+                <p>is.Integer()</p>
+                <p>if number is integer returns true</p>
+                <p id="checkint"></p>
+            </td>
+            <td>
+                <p>is.isSafeInteger()</p>
+                <p>if number is SafeInteger returns true</p>
+                <p id="checkSafeinteger"></p>
+            </td>
+            <td>
+                <p>parseFloat()</p>
+                <p>Converts into number as integer<br> and float both form</p>
+                <p id="parseFloat"></p>
+            </td>
+            <td>
+                <p>parseInt()</p>
+                <p>parses a string and returns a whole number.</p>
+                <p id="parseInt"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>Number Properties</th>
+        </tr>
+        <tr>
+            <td>
+                <h5>EPSILON</h5>
+                <p>smallest floating point > 1</p>
+                <p id="epsilon"></p>
+            </td>
+            <td>
+                <h5>MAX_VALUE</h5>
+                <p>largest number in JS</p>
+                <p id="largnum"></p>
+            </td>
+            <td>
+                <h5>MIN_VALUE</h5>
+                <p>lowest number in JS</p>
+                <p id="lownum"></p>
+            </td>
+            <td>
+                <h5>MAX_SAFE_INTEGER</h5>
+                <p>maximum safe integer in JS</p>
+                <p id="msnum"></p>
+            </td>
+            <td>
+                <h5>MIN_SAFE_INTEGER</h5>
+                <p>minimum safe integer in JS</p>
+                <p id="mininum"></p>
+            </td>
+            <td>
+                <h5>POSITIVE_INFINITY</h5>
+                <p>Infinity (returned on overflow)</p>
+                <p id="p_infinity"></p>
+            </td>
+            <td>
+                <h5>NEGATIVEE_INFINITY</h5>
+                <p>Negative Infinity (returned on overflow)</p>
+                <p id="n_infinity"></p>
+            </td>
+            <td>
+                <h5>NaN</h5>
+                <p>Not-a-Number</p>
+                <p id="nan"></p>
+            </td>
+        </tr>
+
+    </table>
+</body>
+<script src="Number.js"></script>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="ob"></p>
+    <p id="obj"></p>
+    <p id="demo1"></p>
+    <p id="ss"></p>
+    <p id="demo"></p>
+    <p id="equal"></p>
+
+    <script>
+
+        const pi = 3.14
+        let a = 4;
+        a = 2;
+
+        {
+            let x = 10
+            x += 5
+
+            let y = 'karan' + 5;
+
+            document.getElementById('ss').innerHTML = x + ' ' + y
+        }
+
+        const sun = 'east'
+
+        {
+            const pi = 3.14;
+        }
+
+        const vhicle = ['harier', 'B.M.W.a3', '911']
+        vhicle[2] = 'benz'
+        vhicle.push("lembo")
+        vhicle.pop("lembo")
+        document.write(vhicle);
+
+        function c() {
+            document.getElementById('con').innerHTML = pi
+        }
+        function s() {
+            document.getElementById('cars').innerHTML = cars
+        }
+        function sun1() {
+            document.getElementById('sun').innerHTML = sun
+
+        }
+
+        const cars = ['volvo', 'TATA', 'Benz']
+        cars[2] = 'B.M.W'
+
+
+
+        let n = 51
+
+        let z = n % 2
+
+        {
+            let na = 'name'
+
+            let no = '17'
+
+
+            document.getElementById('equal').innerHTML = na > no
+        }
+
+
+        {
+            let a = 20 === 20 ? 'this statement is true ' : 'this statement is false'
+            document.getElementById('demo').innerHTML = a
+
+        }
+
+        {
+            let a, b, ans
+            a = 50
+            b = 40
+            ans = (b = a) * (a + b)
+
+            let c
+            c=BigInt(23456789012345672345678912345678);
+
+            document.getElementById('demo1').innerHTML = c;
+            // document.getElementById('demo1').innerHTML = 
+
+        }
+        {
+            let fobj ={fname : 'rajan' , lname : 'chovatiya' , age : 19 }
+
+            document.getElementById('obj').innerHTML = fobj.fname+' '+fobj.lname
+        }
+
+        {
+            document.getElementById('ob').innerHTML = typeof 2 + '<br>' + typeof 'rajan' + '<br>' + typeof true
+        }
+
+    </script>
+
+
+    <br>
+    <p> </p>
+    <button onclick="c()" style="margin-top: 20px;">get pi's value</button>
+    <label id="con"></label><br>
+
+    <button onclick="sun1()" style="margin-top: 30px;">sun rise in .. </button>
+    <label id="sun"></label>
+    <br>
+
+    <button onclick="s()" id="cars" style="margin-top: 30px;">there are so many company like</button>
+
+
+</body>
+
+</html>

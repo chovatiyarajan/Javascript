@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="object"></p>
+    <script>
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+
+            this.access = (val) => {
+                return `${this.name} and my age is ${this.age}`
+            }
+        }
+
+        const john = new Person('john', 36)
+
+        document.getElementById('object').innerHTML = this.john
+    </script>
+</body>
+
+</html>

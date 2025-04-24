@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+
+<body>
+    <input type="text" id="getName">
+    <input type="text" id="getValue">
+    <button onclick="set()">setData</button>
+    <button onclick="get()">getData</button>
+</body>
+<script>
+    const name = document.getElementById('getName');
+    const value = document.getElementById('getValue');
+    const expires = new Date(Date.now() + 2 * (60 * 1000)).toUTCString();
+
+    console.log(expires);
+
+    function set() {
+        let nm = name.value;
+        let vl = value.value;
+        document.cookie = `${nm}=${vl}; expires=${expires}; path=/`;
+    }
+    function get() {
+        console.log(document.cookie)
+
+    }
+
+
+
+
+</script>
+
+</html>

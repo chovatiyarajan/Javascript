@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <style>
+        tr {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0px;
+            border-bottom: 2px solid grey;
+        }
+
+        th {
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th colspan="7">
+                <h1>Array</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <p>const a1 = ['a1','a2','a3','a4','a5']; </p>
+                <p id="arr1"></p>
+            </td>
+            <td>
+                <p>const a2 = new Array( 'a1','a2','a3','a4','a5',) ;</p>
+                <p id="arr2"></p>
+            </td>
+            <td>
+                <h3> Accessing the array </h3>
+                <P>let a1_4 = a1[3];</P>
+                <p id="aceess_array"></p>
+            </td>
+            <td>
+                <h4>using index find last item</h3>
+                    <p>let a1_5 = a1[a1.length - 1];</p>
+                    <p id="ind_arr"></p>
+            </td>
+            <td>
+                <h4>chang item</h4>
+                <p>a1[0] = 'a_one' ;</p>
+                <p>a1[1] = 'a_two';</p>
+                <p id="chang_a1"></p>
+            </td>
+            <td>
+                <h4>convert to string</h4>
+                <p>const cov_string = a1.toString();</p>
+                <p id="con_str"></p>
+            </td>
+            <td>
+                <h4>type of array</h4>
+                <p>document.getElementById('type').innerHTML = '-- > ' + typeof a1; </p>
+                <p id="type"></p>
+            </td>
+        <tr>
+            <td>
+                <h2>array Loop</h2>
+                <p id="loop1" style="text-align: left;"></p>
+            </td>
+            <td style="text-align: left;">
+                <h2>2nd loop</h3>
+                    <p id="loop2"></p>
+            </td>
+            <td style="text-align: left;">
+                <h3 style="text-align: center;">Code</h3>
+                <P>const arr = ['one','two','three','foure','five','six','sevan','eight'];<br>
+                    let ol = 'ol' <br>
+                    for ( i=0 ; i < arr.length; i++){<br>
+                        ol += 'li' + arr[i] + 'li' ; <br>
+                        }<br>
+                        ol += '/ol' ; <br>
+                        document.getElementById('loop2').innerHTML = ol</P><br>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <h1>Arrays are Objects</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <h4>create an object</h4>
+                <p style="text-align: left;">const o1 = {<br>name: 'rajan',<br>surname: 'Chovatiya',<br>eno_no:
+                    230801109,<br>roll_no : 17<br>}</p>
+                <p id="ob1"></p>
+            </td>
+            <td>
+                <p>array and object loop</p>
+                <p id="arrayobject"></p>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <th>
+                <h1>Array Methods</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <p>array length</p>
+                <p>const number = ['one','two','three','four'];<br>let a = number.length;</p>
+                <p id="length"></p>
+            </td>
+            <td>
+                <p>toString</p>
+                <p>let b = number.toString();</p>
+                <p id="tostring"></p>
+            </td>
+            <td>
+                <p>Array at</p>
+                <p>let c = number.at(2);</p>
+                <p id="at"></p>
+            </td>
+            <td>
+                <p>array join</p>
+                <p>let d = number.join('-');</p>
+                <p id="arrayjoin"></p>
+            </td>
+            <td>
+                <p>pop</p>
+                <p>const e = number.pop(3)</p>
+                <p id="pop"></p>
+                <p id="array"></p>
+            </td>
+            <td>
+                <p>push</p>
+                <p>const f = number.push('four')</p>
+                <p id="push"></p>
+                <p id="array1"></p>
+            </td>
+            <td>
+                <p>shift</p>
+                <p>const g = number.shift();</p>
+                <p id="shift"></p>
+                <p id="arr3"></p>
+            </td>
+            <td>
+                <p>unshift</p>
+                <p>const h = number.unshift('one');</p>
+                <p id="unshift"></p>
+                <p id="arr4"></p>
+            </td>
+            <td>
+                <p>delete</p>
+                <p>delete number[0];</p>
+                <p>One is deleted</p>
+                <p id="d1"></p>
+                <p id="delete"></p>
+            </td>
+            <td>
+                <p>concat</p>
+                <p>const number1 = ['one','two','three'];<br>const number2 = ['1','2','3'];<br>const concat_number =
+                    number1.concat(number2 + 'rajan')</p>
+                <p id="concat"></p>
+            </td>
+            <td>
+                <p>copy within</p>
+                <p>const copi_within = number.copyWithin(2,1,3);</p>
+                <p id="copywithin"></p>
+            </td>
+            <td>
+                <p>splice</p>
+                <p>const splice = new_numbwe.splice(2,4,'three','four');</p>
+                <p id="splice"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>Array searching Methods</th>
+        </tr>
+        <tr>
+            <td>
+                <p>const arr = ['1','2','3','4','5','6','7','8','9','10','4']</p>
+                <p>indexof</p>
+                <p>const indexof = arr.indexOf('4') + 1;</p>
+                <p id="indexof"></p>
+            </td>
+            <td>
+                <p>last_indexof</p>
+                <p>const lastindexof = arr.lastIndexOf('4') + 1;</p>
+                <p id="lastindexof"></p>
+            </td>
+            <td>
+                <p>includes</p>
+                <p>const include = arr.includes('4');</p>
+                <p id="include"></p>
+            </td>
+            <td>
+                <p>find</p>
+                <p>const find = arr.find(fi);<br>function fi(val, inx, arr) {<br>return val > 4<br>}</p>
+                <p id="find"></p>
+            </td>
+            <td>
+                <p>findindex</p>
+                <p>const findIndex = arr.findIndex(fii);<br>function fii(val, inx, arr) {<br>return val > 4<br>}    </p>
+                <p id="findindex"></p>
+            </td>
+            <td>
+                <p>findlast</p>
+                <p>const findlast = arr.findLast(fl);</p>
+                <p id="findlast"></p>
+            </td>
+            <td>
+                <p>findlastindex</p>
+                <p>const findlastindex = arr.findLastIndex(fil)</p>
+                <p id="lastfindindex"></p>
+            </td>
+            <td>
+                <p id="arr"></p>
+                <button onclick="sort1()">get random number</button>
+            </td>
+            <td>
+                <p>minmun number</p>
+                <p>let min = arr.sort(function (a, b) { return a - b })</p>
+                <p id="min"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="myar"></p>
+                <button onclick="reset()">reset</button>
+                <p id="myarr"></p>
+            </td>
+            <td>
+                <p>get minmum value</p>
+                <button onclick="minmun()">get min value</button>
+                <p id="minvalue"></p>
+            </td>
+            <td>
+                <p>find max value</p>
+                <p id="max_val"></p>
+                <button onclick="maxvalue()">get max value</button>
+                <p id="maxv"></p>
+            </td>
+            <td>
+                <p id="sort_array"></p>
+                <button onclick="sort()">sort</button>
+                <button onclick="des_sort()">des_sort</button>
+                <p id="sorted_array"></p>
+            </td>
+            <td>
+                <p id="object1212"></p>
+                <button onclick="displaycars()">get array</button>
+                <button onclick="sort_object()">sort as year</button>
+            </td>
+            <td>
+                <p id="object12121"></p>
+                <button onclick="dsort()">sort</button>
+            </td>
+        </tr>
+        <tr>
+            <th>Array Iteration</th>
+        </tr>
+        <tr>
+            <td>
+                <p>foreach</p>
+                <p id="foreach"></p>
+            </td>
+        </tr>
+    </table>
+</body>
+<script src="Array.js"></script>
+
+</html> 

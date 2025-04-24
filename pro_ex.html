@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="input"><input type="submit" onclick="btn()">
+    </div>
+</body>
+<script>
+
+
+    function val() {
+        console.log("rajan");
+
+    }
+    setTimeout(val, 3000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function btn() {
+        let getVal = document.getElementById("input").value;
+
+
+
+
+        let pro = new Promise(function (myresolvr, myReject) {
+            setTimeout(console.log("gggg"), 3000)
+
+            if (getVal == 16) {
+                myresolvr("correct!!");
+            }
+            else {
+                myReject("you enter wrong number!!");
+            }
+        });
+
+        pro.then(
+            function (value) { val(value) },
+            function (error) { val(error) }
+        )
+    }
+</script>
+
+</html>

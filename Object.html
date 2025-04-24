@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="object1"></p>
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <p id="object2"></p>
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <p id="object3"></p>
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <p id="object4"></p>
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <p id="object5"></p>
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <p id="object6"></p>
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <p id="object11"></p>
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <h3>Object controuctor</h3>
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <p id="oc1"></p>
+    <p id="oc2"></p>
+    <p id="oc3"></p>
+    <p id="oc4"></p>
+    <button onclick="a2()">on all</button>
+
+    <script>
+
+        const p1 = {
+            name: 'Rajan',
+            surname: 'Chovatiya',
+            age: '19',
+            fname: function () {
+                return this.name + ' ' + this.surname
+            }
+
+        }
+        delete p1.age;
+
+        document.getElementById('object1').innerHTML = 'my name is ' + p1.fname() + ' and  my age is ' + p1.age
+
+        const cars = {
+            car1: 'Harier',
+            car2: 'B.M.W',
+            car3: 'Benz'
+        }
+        let cnm = ' ';
+        for (let [car, name] of Object.entries(cars)) {
+            cnm = cnm + car + ' : ' + name + '<br>'
+        }
+
+        document.getElementById('object2').innerHTML = cnm
+
+
+        const person = {
+            name: 'Rajan',
+            surname: 'Chovatiya',
+            age: 19
+        }
+
+        person.enono = 2300801109,
+            person.fullname = function () {
+                return this.name + ' ' + this.surname
+            }
+        person.fullname = function () {
+            return (this.name + ' ' + this.surname).toUpperCase()
+        }
+
+
+        let x = "name"
+        let y = "surname"
+
+        document.getElementById('object3').innerHTML = person[x] + ' ' + person[y] + ' ' + person.fullname()
+
+        const myArray = Object.values(person);
+
+        document.getElementById('object4').innerHTML = myArray
+
+
+        const myvar = {
+            name: 'Rajan',
+            surname: ' Chovatiya',
+            rollno: 17,
+            enono: 230801109
+        }
+
+        let text12 = '';
+        for (let x in myvar) {
+            text12 = text12 + myvar[x] + ' ';
+        };
+
+
+        const myvar2 = {
+            name: 'Rajan',
+            surname: ' Chovatiya',
+            rollno: 17,
+            enono: 230801109,
+            subject: {
+                subject1: 'os',
+                subject2: 'coa',
+                subject3: 'oracle'
+            }
+        }
+
+        let text121 = '';
+        for (let x in myvar2) {
+            text121 = text121 + myvar2[x] + ' ';
+
+        };
+        text111 = '';
+        for (let x in myvar2.subject) {
+            text111 = text111 + myvar2.subject[x] + ' ';
+        }
+
+        document.getElementById('object5').innerHTML = text121;
+        document.getElementById('object6').innerHTML = text121 + ' ' + text111;
+
+        const tata = {
+            car_name: 'harrier',
+            car_model: 'dark-addition',
+            car_type: 'offroad vehicle',
+            other_cars: {
+                car1: 'nexon',
+                car2: 'punch',
+                car3: 'safari',
+            }
+        }
+        let car_all = '';
+        for (let [cars, name] of Object.entries(tata)) {
+            car_all = car_all + cars + ' : ' + name + '<br>';
+        }
+
+        document.getElementById('object11').innerHTML = car_all;
+
+        //  --------------------------------------------------------------------------------------------------
+        function a2() {
+
+
+            function person_2(name, surname, age, height) {
+                this.first_name = name;
+                this.last_naame = surname;
+                this.your_age = age;
+                this.your_height = height;
+                this.your_cast = "Patel"
+            }
+
+            const rajan = new person_2('karan', 'Chovatiya', 19, '179cm ');
+            rajan.rollno = 17;
+            person_2.prototype.gender = "male";
+            const karan = new person_2('karan', 'khunt', 19, '160cm ')
+
+            document.getElementById('oc1').innerHTML = rajan.first_name + ' ' + rajan.last_naame + ' cast : ' + karan.your_cast;
+            document.getElementById('oc2').innerHTML = karan.first_name + ' ' + karan.last_naame + ' ' + rajan.your_cast;
+
+
+            function person_3(firstname, lastname, rollno, height) {
+                this.name = firstname;
+                this.surname = lastname;
+                this.rno = rollno;
+                this.height = height;
+                this.fullname = function () {
+                    return this.name + ' ' + this.surname;
+                };
+            }
+
+            const ai = new person_3('Karan', 'khunt', 17, '179CM')
+            let af = ''
+
+
+
+            for (let [per, val] of Object.entries(ai)) {
+                af = af + per + ' : ' + val + ' .' + '<br>';
+            }
+
+            document.getElementById('oc3').innerHTML = af
+            document.getElementById('oc3').innerHTML = 'this is my fullname : ' + ai.fullname();
+
+            person_3.prototype.changeName = function (n10 ,n1) {
+                this.surname = n1;
+                this.name = n10 ;
+            }
+
+            ai.changeName('karan' , 'chovatiya')
+
+            document.getElementById('oc4').innerHTML = ai.name + ' ' + ai.surname;
+        }
+    </script>
+</body>
+
+</html>

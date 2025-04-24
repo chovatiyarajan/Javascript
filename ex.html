@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid black;
+            width: 100%;
+        }
+
+        td {
+            padding: 20px;
+            font-size: 23px;
+        }
+
+        tr {
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>
+                <h1>Diagram</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <p id="dia_0"></p>
+            </td>
+            <td>
+                <p id="dia_1"></p>
+            </td>
+            <td>
+                <p id="dia_2"></p>
+            </td>
+            <td>
+                <p id="dia_3"></p>
+            </td>
+            <td>
+                <p id="dia_4"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="diagram5"></p>
+            </td>
+            <td>
+                <p id="diagram6"></p>
+            </td>
+            <td>
+                <p id="diagram7"></p>
+            </td>
+            <td>
+                <p id="diagram8"></p>
+            </td>
+            <td>
+                <p id="diagram9"></p>
+            </td>
+            <td>
+                <p id="diagram10"></p>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    let d0 = '';
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            d0 += '*';
+        }
+        d0 += '<br>'
+    }
+    document.getElementById('dia_0').innerHTML = d0;
+
+
+    let d1 = '';
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j <= i; j++) {
+            d1 += '*';
+        }
+        d1 += '<br>'
+    }
+    document.getElementById('dia_1').innerHTML = d1;
+
+
+    let d2 = '';
+    for (i = 0; i <= 4; i++) {
+        for (j = 4; j >= i; j--) {
+            d2 += '*';
+        }
+        d2 += '<br>'
+    }
+    document.getElementById('dia_2').innerHTML = d2;
+
+
+    let table = ''
+    for (let i = 0; i <= 4; i++) {
+        let coloum = ''
+        for (let j = 0; j <= i - 1; j++) {
+            coloum += '&nbsp&nbsp';
+        }
+        for (let k = 4 - i; k >= 0; k--) {
+            coloum += '*'
+        }
+        table += coloum + '<br>'
+    }
+    document.getElementById('dia_3').innerHTML = table;
+
+    {
+        let table = ''
+        for (let i = 0; i < 5; i++) {
+            let coloum = ''
+            for (let j = i; j <= 4; j++) {
+                coloum += '&nbsp&nbsp';
+            }
+            for (let k = 0; k <= i; k++) {
+                coloum += '*'
+            }
+            table += coloum + '<br>'
+        }
+        document.getElementById('dia_4').innerHTML = table;
+    }
+
+    {
+        let coloum = ''
+
+        for (let i = 0; i < 5; i++) {
+            let col = '';
+            for (let k = 0; k < i; k++) {
+                col += '&nbsp;';
+            }
+            for (let j = 0; j < 5; j++) {
+                col += '* &nbsp;';
+            }
+            coloum += col + '<br>'
+        }
+        document.getElementById('diagram5').innerHTML = coloum
+    }
+
+    {
+        let table = ''
+
+        for (i = 0; i < 5; i++) {
+            let col = '';
+            for (let j = 5; j > i; j--) {
+                col += '&nbsp';
+            }
+            for (let k = 0; k <= i; k++) {
+                col += ' * '
+            }
+            table += col + '<br>'
+        }
+        document.getElementById('diagram6').innerHTML = table;
+    }
+
+    {
+        let t7 = '';
+
+        for (i = 0; i <= 5; i++) {
+            d7 = '';
+            for (j = 5; j > i; j--) {
+                d7 += ' &nbsp;';
+            }
+            for (k = 0; k < i; k++) {
+                d7 += i + ' ';
+            }
+            t7 += d7 + '<br>'
+        }
+        document.getElementById('diagram7').innerHTML = t7;
+    }
+
+    {
+        let table = '';
+        for (let i = 0; i < 6; i++) {
+            for (let j = 1; j < i; j++) {
+                table += j;
+            }
+            table += '<br>';
+        }
+
+        document.getElementById('diagram8').innerHTML = table;
+    }
+
+    {
+        let d10 = '';
+
+        for (let i = 5; i >= 1; i--) {
+            for (let j = 1; j <= i; j++) {
+                d10 += j;
+            }
+            d10 += '<br>'
+            // console.log(d10)
+        }
+        document.getElementById('diagram9').innerHTML = d10
+    }
+
+    {
+        let rows = 5; // Number of rowsfor the pyramid
+        let pattern = "";
+
+        for (let i = 1; i <= rows; i++) {
+            for (let j = 1; j <= i; j++) {
+                // Check if the position is odd or even to alternate between 1 and 0
+                if ((i + j) % 2 === 0) {
+                    pattern += "1";
+                } else {
+                    pattern += "0";
+                }
+            }
+            pattern += "<br>"; // Move to the next row
+        }
+
+        document.getElementById("diagram10").innerHTML = pattern;
+
+    }
+
+</script>
+
+</html>

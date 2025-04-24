@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function on() {
+            var onn=document.getElementById('im_1')
+            onn.src='https://www.w3schools.com/js/pic_bulbon.gif'
+            onn.style.filter='drop-shadow(0px 0px 40px yellow)'
+            onn.style.transition='0.5s'
+        }
+
+        function off() {
+            var onn=document.getElementById('im_1')
+            onn.src="https://www.w3schools.com/js/pic_bulboff.gif"
+            onn.style.filter='drop-shadow(0px 0px 00px)'
+            onn.style.transition='0.2s'
+        }
+    </script>
+
+    <button onclick="on()">On</button>
+    <img src="https://www.w3schools.com/js/pic_bulboff.gif" alt="" id="im_1">
+    <button onclick="off()">Off</button>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <h1 style="text-align: center;font-family: sans-serif;">Log In</h1>
+        <div class="lebel">
+            <label>Username</label>
+        </div>
+        <div>
+            <input id="username" type="name" placeholder="enter Username">
+            <p id="usernameError" style="color: red;margin: 0;"></p>
+        </div>
+        <!--  -->
+        <div class="lebel">
+            <label>Enter password</label>
+        </div>
+        <div>
+            <input id="password" type="password" placeholder="enter Password" max="1" min="6">
+            <p id="passwordError" style="color: red;margin: 0;"></p>
+        </div>
+        <!--  -->
+        <div class="submit" >
+            <button type="button" onclick="submit()">Log IN</button>
+        </div>
+    </div>
+</body>
+<script>
+    {
+
+        function submit() {
+            const username = document.getElementById('username').value;
+
+            const password = document.getElementById('password').value
+
+            if (!username) {
+                document.getElementById('usernameError').innerHTML = 'plese enter your username'
+            }
+            else {
+                document.getElementById('usernameError').innerHTML = ''
+            }
+            // 
+            if (!password) {
+                document.getElementById('passwordError').innerHTML = 'plese enter Password'
+            }
+            else if(password.length < 6){
+                document.getElementById('passwordError').innerHTML = 'plese enter valid Password';                
+            }            
+            else {
+                document.getElementById('passwordError').innerHTML = '';
+            }
+
+            if(username && password.length > 5){
+                alert("your'r loged in");
+                document.getElementById('username').value = ''
+                document.getElementById('password').value = ''
+            }
+            // console.log(password)               
+        }
+    }
+</script>
+
+</html>

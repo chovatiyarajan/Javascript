@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main_form {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .form {
+            display: flex;
+            border: 1px solid black;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+        }
+
+        .label {
+            width: 50%;
+        }
+
+        .input {
+            width: 75%;
+        }
+
+        .input>input {
+            width: 60%;
+            border-radius: 5px;
+            border: 1px solid black;
+            padding: 5px 0px;
+        }
+
+        .tableDiv {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        table {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+
+        tr {
+            padding: 10px;
+        }
+
+        td,
+        th {
+            padding: 10px;
+            border-radius: 8px;
+
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="main_form">
+            <div class="form">
+                <div class="label">
+                    <label>Name</label>
+                    <hr>
+                    <label>Email</label>
+                    <hr>
+                    <label>Password</label>
+                    <hr>
+                    <label>Gender</label>
+                </div>
+                <div class="input">
+                    <input type="text" id="name" onchange="exx()" required><br><label id="gName" class="red"></label>
+                    <hr>
+                    <input type="email" id="email" required><br><label id="gEmail" class="red"></label>
+                    <hr>
+                    <input type="text" id="passWord" required><br><label id="gPass" class="red"></label>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male" required>Male
+                        <input type="radio" id="female" name="gender" value="feMale">Female<br><label id="gGender"
+                            class="red"></label>
+                    </div>
+                    <hr>
+                    <div>
+                        <input type="checkbox" id="h1" name="Hobby" value="Cricket">Cricke
+                        <input type="checkbox" id="h2" name="Hobby" value="Table-Tenish">Table-tenish
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="Save_Data" onclick="save()">Save</button>
+    </div>
+    <div class="tableDiv">
+        <div>
+            <input type="text"
+                style="margin-bottom: 50px; padding: 10px 30px; border-radius: 8px;border: 1px solid black;text-align: center;"
+                placeholder="Serch" id="search">
+
+            <button onclick="searchData()"
+                style=" padding: 10px 20px; border-radius: 8px;border: 1px solid black;text-align: center;">Search</button>
+        </div>
+        <table border="5">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Gender</th>
+                    <th>Hobby</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody id="saveDataonTable"></tbody>
+        </table>
+    </div>
+</body>
+
+<script>
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let passWord = document.getElementById('passWord');
+    // let male = document.getElementById('male');
+    // let female = document.getElementById('female');
+    let Cricket = document.getElementById('h1');
+    let Tt = document.getElementById('h2');
+    let Search = document.getElementById('search');
+    let isUpdate = false;
+    let updateInx;
+
+    let main = [];
+    // function exx() {
+    //     console.log(name.value)
+    // }
+    function save() {
+        //check form
+
+        if (name.value == '') {
+            document.getElementById('gName').innerHTML = "Enter name plss";
+        } else { document.getElementById('gName').innerHTML = ""; }
+
+
+        if (email.value == '') {
+            document.getElementById('gEmail').innerHTML = "Enter email plss";
+        } else { document.getElementById('gEmail').innerHTML = ""; }
+
+
+        if (passWord.value == '') {
+            document.getElementById('gPass').innerHTML = "Enter pass plss";
+        } else { document.getElementById('gPass').innerHTML = ""; }
+
+
+        if (name.value == '' || email.value == '' || passWord.value == '') {
+            return alert("enter all form plese !!");
+        }
+        else {
+            const person = {
+                name: name.value,
+                email: email.value,
+                password: passWord.value,
+                gender: gen(),
+                hobby: hoby()
+            }
+
+            if (isUpdate) {
+                main[updateInx] = person;
+                isUpdate = false;
+                updateInx = null;
+            } else {
+                main.push(person);
+            }
+
+            name.value = '';
+            email.value = '';
+            passWord.value = '';
+
+            setData();
+            document.getElementById('Save_Data').innerHTML = 'Save'
+        }
+    }
+
+    function gen() {
+        if (male.checked === true) {
+            return male.value
+        }
+        if (female.checked === true) {
+            return female.value
+        }
+    }
+
+    function hoby() {
+        let hby = [];
+        if (Cricket.checked === true) {
+            hby.push(Cricket.value);
+        }
+        if (Tt.checked === true) {
+            hby.push(Tt.value);
+        }
+        return hby;
+    }
+
+
+    function update(value, inx) {
+        name.value = value.name;
+        email.value = value.email;
+        passWord.value = value.password;
+        isUpdate = true;
+        updateInx = inx;
+
+        document.getElementById('Save_Data').innerHTML = 'Update'
+    }
+
+    // function deletee(index) {
+    //     main.splice(index, 1);
+    //     setData();
+    // }
+
+    function filter(val, inn) {
+        const del = main.filter((val, ind) => {
+            return inn !== ind;
+        });
+
+        main = del;
+        setData();
+    }
+
+
+    function setData() {
+        const saveData = main.map((val, ind) => {
+            return `
+                <tr>
+                    <td>${val.name}</td>
+                    <td>${val.email}</td>
+                    <td>${val.password}</td>
+                    <td>${val.gender}</td>
+                    <td>${val.hobby}</td>
+                    <td>
+                        <button onclick='update(${JSON.stringify(val)}, ${ind})'>Update</button>
+                        <button onclick='filter(${JSON.stringify(val)}, ${ind})'>Delete</button>
+                    </td>
+                </tr>`;
+        }).join('');
+
+        document.getElementById('saveDataonTable').innerHTML = saveData;
+    }
+    function searchData() {
+        // console.log(Search.value);
+        // const searchValue = Search.value.trim()
+        // if (!searchValue) return
+        // const searchData = main.filter((val) => {
+        //     return val.name.includes(searchValue)
+        // })
+        // main = searchData
+        // setData()
+
+        let serchnm = Search.value;
+        const searchName = main.filter((val) => {
+            return val.name.includes(serchnm.trim().toLowerCase());
+        });
+        main = searchName;
+        setData()
+    }
+</script>
+
+</html>

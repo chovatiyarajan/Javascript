@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Textarea</h1>
+    <textarea id="textarea" onkeydown="count()" placeholder="enter your comment" maxlength=200></textarea>
+    <p id="counter">0/200</p>
+</body>
+<script>
+    function count(){
+        let counter = document.getElementById('textarea').value;
+
+        // console.log(counter.length);
+
+        document.getElementById('counter').innerHTML =`${counter.length} / 200`;
+    }
+</script>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Hello !!</h1>
+
+</body>
+
+<script>
+    // const pro = new Promise(function (resolve,reject) {
+    //     setTimeout(function(){
+    //         console.log("async task is complete");
+    //         resolve()
+    //     },1000);
+
+    // });
+
+    // pro.then(function(){
+    //     console.log("and .then function is also complied")
+    // });
+
+    // const newpro  = new Promise( function (resolve , reject ) {
+    //     setTimeout(function(){
+    //         console.log("asynq task two");
+    //         resolve();
+    //     },1000);
+    // }).then(function(){
+    //     console.log(".then code")
+    // })
+
+    // const prothree = new Promise(function(resolve,reject){
+    //     setTimeout(function(){
+    //         resolve({usernaame:"rajan",email : "rajan@gmail.com"})
+    //     },1000)
+    // })
+    // prothree.then(function(user){
+    //     console.log(user);
+
+    // });
+
+    // const proFour = new Promise(function(resolve,reject ){
+    //     setTimeout(function(){
+    //         let error = true;
+
+    //         if(error){
+    //             resolve({ussername : 'chovatiya',email : 'chovatiya34567.com'})
+    //         }
+    //         else{
+    //             reject("Data not getted");
+    //         }
+    //     },1000);
+    // })
+
+    // proFour.then((user) => {
+    //     console.log(user)
+    //     return user.username;
+    // }).then((username) => {
+    //     console.log(username)
+    // }).catch((err)=>{
+    //     console.log(err);        
+    // }).finally(() => console.log("botj are run"));
+
+
+    const newpro = new Promise((resolve, rejected) => {
+        setTimeout(() => {
+            let triger = true;
+
+            if (triger) {
+                console.log('this is resolve');
+                resolve({ username: 'name', email: 'chovatiyarajan2347@gmail.com', phonNo: '963585247' })
+            }
+            else{
+                console.log('it get an error !!')
+            }
+
+        }, 1000)
+    }).then((user) => {
+        console.log(user)
+    }).catch();
+        
+
+
+</script>
+
+</html>

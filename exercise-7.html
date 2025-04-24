@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>       
+        @media screen and (max-width: 950px) {
+            .main_div {
+                width: 75%;
+            }
+        }
+
+        @media screen and (max-width: 500PX) {
+            .main_div {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_div" href="congo.php">
+        <div>
+            <div class="label">
+                <label>Full name</label>
+            </div>
+            <input onclick="" class="input" id="name" type="text" placeholder="Enter Your Fullname" minlength="5">
+            <p id="nameError" class="Error" style="color: red;"></p>
+
+            <div class="label">
+                <label>Email Address</label>
+            </div>
+            <input class="input" id="email" type="email" placeholder="Enter Your Email Address" required>
+            <p id="emailError" class="Error" style="color: red;"></p>
+
+            <div class="label">
+                <label>Passwoard</label>
+            </div>
+            <input class="input" id="password" type="password" placeholder="Create Password">
+            <p id="passwordError" class="Error" style="color: red;"></p>
+
+            
+            <div class="submit">
+                <button type="button" onclick="submit()" >Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    {
+        let genderValue = ""
+
+        function gender(value) {
+            genderValue = value
+        }
+
+        function submit() {
+            let name = document.getElementById('name').value
+            let email = document.getElementById('email').value
+            let password = document.getElementById('password').value
+
+            if (!name) {
+                document.getElementById("nameError").innerHTML = "Please enter your Full name!! "
+            }
+            else {
+                document.getElementById('nameError').innerHTML = ''
+            }
+            // 
+            if (!email) {
+                document.getElementById("emailError").innerHTML = "Please enter your Email!! "
+            }
+            else {
+                document.getElementById('emailError').innerHTML = ''
+            }
+            // 
+            if (!password) {
+                document.getElementById("passwordError").innerHTML = "Please enter Password!! "
+            }
+            else {
+                document.getElementById('passwordError').innerHTML = ''
+            }
+
+            if(password.length <= 3){
+                document.getElementById("passwordError").innerHTML = "Please enter more than 3 length!! "
+            }
+            else{
+                document.getElementById("passwordError").innerHTML = ""
+            }
+            
+            if (name && email && password && password.length > 3) {
+                const chech = confirm("Are you sure you want to submit the form?");
+
+                if (chech) {
+                    alert('submited')
+
+                } else {
+                    alert('unsubmited')
+
+                }
+
+            }
+            else { }
+        }
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <P id="summ"></P>
+    <p id="mull"></p>
+    <p id="div"></p>
+    <p id="text"></p>
+    <p id="text1"></p>
+    
+    <button onclick="sum(19, 10)">sum</button>
+    <script>
+        function sum(a, b) {
+            const result = a + b
+
+            document.getElementById('summ').innerHTML = result;
+        }
+
+        const mull = mul(10, 10)
+        document.getElementById('mull').innerHTML = mull
+        console.log(mull)
+
+        function mul(x, y) {
+            return x * y
+        }
+
+        function division(i, j) {
+            let div = 'ans is ' + (10 + 90) * i / 100 * j;
+            document.getElementById('div').innerHTML = div
+        }
+        division(10, 21)
+
+
+        function te1(c1) {
+            return c1
+        }
+        
+        let text = 'car name is ' + te1('volvo') + ' .'
+        document.getElementById('text').innerHTML = text
+
+        function t2(te1) {
+            return te1
+        }
+
+        let text3 = 'name of book is '+ t2('satya na prayogo') + 'is best book'
+        document.getElementById('text1').innerHTML = text3
+        
+        
+    </script>
+</body>
+
+</html>

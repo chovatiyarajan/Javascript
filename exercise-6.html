@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <p>enter fernhit </p>
+    <input oninput="fernhit()" type="number" id="fernhitt">
+
+    <p>enter celsius</p>
+    <input oninput="celsius()" type="number" id="celsius">
+
+</body>
+<script>
+    function fernhit() {
+        const fer = document.getElementById('fernhitt').value
+        // console.log(fer)
+        let cel = (fer - 32) * 5 / 9;
+        console.log(cel)
+        document.getElementById('celsius').value = cel
+
+    }
+
+    function celsius() {
+        const cel = document.getElementById('celsius').value
+
+        let fer = (cel * 9/5) + 32;
+        console.log(cel)
+
+        document.getElementById('fernhitt').value = fer
+    }
+</script>
+
+</html>

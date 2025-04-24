@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tabel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="nm"><br><label class="red"></label></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" id="em"><br><label class="red"></label></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td style="display: flex; justify-content: space-around; ">
+                <div><input type="radio" value="male" name="gender" id="ml">Male<br><label class="red"></label></div>
+                <div><input type="radio" value="female" name="gender" id="fl">Female</div>
+            </td>
+        </tr>
+    </table>
+    <button onclick="getvalue()">Save</button>
+    <h4>Total task number : <span id="totTask"></span></h4>
+    <table class="tabell" border="1">
+        <thead>
+            <tr class="trr">
+                <th class="thh">Name</th>
+                <th class="thh">email</th>
+                <th class="thh">Gender</th>
+                <th class="thh">radio</th>
+            </tr>
+        </thead>
+        <tbody id="storeData" style="text-align: center;"></tbody>
+    </table>
+</body>
+<script>
+    let getName = document.getElementById('nm');
+    let getEmail = document.getElementById('em');
+    let male = document.getElementById('ml');
+    let female = document.getElementById('fl');
+    const getStorage = JSON.parse(sessionStorage.getItem('getData')) || [];
+    let main = [];
+    main = getStorage;
+    saveData();
+    document.getElementById('totTask').innerHTML = main.length;
+    function getvalue() {
+        console.log('@@@@@@@@@@', getStorage);
+        let obj = {
+            name: getName.value,
+            email: getEmail.value,
+            gender: gen()
+        }
+
+        main.push(obj);
+        saveData();
+
+        getName.value = '';
+        getEmail.value = '';
+        console.log(main.length)
+        document.getElementById('totTask').innerHTML = main.length;
+
+        document.cookie = "username = rajan;expires = 18 feb 2025 12:59:00 UTC ;"
+
+    }
+
+    function gen() {
+        if (male.checked === true) {
+            console.log(male.value)
+            return male.value;
+        }
+        if (female.checked === true) {
+            console.log(female.value)
+            return female.value;
+        }
+    }
+
+    function deletee(index) {
+        const del = main.filter((_, i) => {
+            return i !== index;
+        })
+        console.log(del)
+        main = del;
+        saveData();
+        document.getElementById('totTask').innerHTML = main.length; 1
+    }
+
+    function update(el, i) {
+        getName.value = el.name;
+        getEmail.value = el.email;
+
+        if (el.gender === 'male') {
+            return male.checked = true;
+        }
+        else if (el.gender === 'female') {
+            return female.checked = true;
+        }
+        console.log(el)
+    }
+
+    function saveData() {
+        const mapp = main.map((ele, i, inn) => {
+            return `
+            <tr>
+                <td>${ele.name}</td>
+                <td>${ele.email}</td>
+                <td>${ele.gender}</td>
+                <td>
+                    <button type="submit" onclick="deletee(${i})">delete</button>
+                    <button type="submit" onclick="update(${JSON.stringify(ele)},${i})">Update</button>
+                </td>
+            </tr>`
+        }).join('');
+        document.getElementById('storeData').innerHTML = mapp
+
+        sessionStorage.setItem('getData', JSON.stringify(main));
+    }
+
+
+</script>
+
+</html>

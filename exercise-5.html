@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input oninput="getage()" type="number" id="get-birthdate">
+    <p id="get-current-age"></p>
+    <p id="Error" style="color: red;margin: 0;"></p>
+    <!-- <button onclick="getage()">Age</button> -->
+
+
+    <script>
+
+        function getage() {
+
+            let curruntYear = new Date().getFullYear();
+            const birthYear = document.getElementById('get-birthdate').value
+            console.log(birthYear)
+
+            document.getElementById('get-current-age').innerHTML = ' you are ' + ((curruntYear - birthYear) + 1) + ' old'
+
+            if (birthYear >= 2025) {
+                document.getElementById('Error').innerHTML = 'invalid year'
+            }
+            else {
+                document.getElementById('Error').innerHTML = ''
+            }
+        }
+    </script>
+</body>
+
+</html>
